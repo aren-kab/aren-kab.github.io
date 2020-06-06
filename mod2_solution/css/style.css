@@ -1,1 +1,8 @@
-a
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-: 20px;
+}
