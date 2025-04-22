@@ -1,5 +1,3 @@
-<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
-<script>
 // Side navigation
 function w3_open() {
   var x = document.getElementById("mySidebar");
@@ -8,6 +6,7 @@ function w3_open() {
   x.style.paddingTop = "10%";
   x.style.display = "block";
 }
+
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
@@ -27,15 +26,18 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " w3-dark-grey";
 }
 
+// Initialize the first tab
 var mybtn = document.getElementsByClassName("testbtn")[0];
-mybtn.click();
+if (mybtn) {
+  mybtn.click();
+}
 
 // Accordions
 function myAccFunc(id) {
   var x = document.getElementById(id);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
@@ -50,29 +52,29 @@ function plusDivs(n) {
 
 function showDivs(n) {
   var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
 }
 
+// Initialize slideshow
 showDivs(1);
 
 // Progress Bars
 function move() {
-  var elem = document.getElementById("myBar");   
+  var elem = document.getElementById("myBar");
   var width = 5;
   var id = setInterval(frame, 10);
   function frame() {
     if (width == 100) {
       clearInterval(id);
     } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1 + '%';
     }
   }
 }
-</script>
